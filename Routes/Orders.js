@@ -12,7 +12,7 @@ import {
   sendPrepTimeMessage, 
   sendKitchenMessage 
 } from '../Controllers/OrderController.js';
-import protect from '../middleware/authMiddleware.js'; // Import the auth middleware
+import { protect } from '../Middleware/authMiddleware.js';
 
 const router = express.Router();
 

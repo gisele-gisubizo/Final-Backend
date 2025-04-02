@@ -12,6 +12,8 @@ import MainCourseRouting from './Routes/MainCourseRoute.js';
 import AppetizerRouting from './Routes/AppetizerRouting.js';
 import DessertRouting from './Routes/DessertRouting.js';
 import authRouting from './Routes/authRouting.js';
+import staffRoutes from './Routes/staff.js';
+
 
 dotenv.config();
 const app = express();
@@ -49,6 +51,8 @@ app.use('/', MainCourseRouting); // For main course items
 app.use('/', AppetizerRouting); // For appetizers
 app.use('/', DessertRouting); // For desserts
 app.use('/', authRouting); // For authentication
+app.use('/Staff', staffRoutes);
+
 
 // Variables from .env file
 const db_user = process.env.DB_USER;

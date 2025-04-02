@@ -1,4 +1,4 @@
-import Order from '../models/Order.js';
+import Order from '../Models/Order.js';
 import User from '../Models/User.js';
 
 // Create orders from cart items
@@ -155,7 +155,7 @@ const updateOrderStatus = async (req, res, status) => {
                 success: false, 
                 message: 'Order not found or not authorized' 
             });
-        }
+        }  // ✅ Added closing bracket here
 
         // Emit socket event
         const io = req.app.get('socketio');
@@ -172,7 +172,7 @@ const updateOrderStatus = async (req, res, status) => {
             order 
         });
 
-    } catch (error) {
+    } catch (error) {  // ✅ Now this will work properly
         res.status(500).json({ 
             success: false, 
             message: 'Error updating order status',

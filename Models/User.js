@@ -11,7 +11,8 @@ const userSchema = new mongoose.Schema({
     match: [/.+\@.+\..+/, 'Please enter a valid email']
   },
   password: { type: String, required: true },
-  tableNumber: { type: Number, required: false }, // Add tableNumber field
+  tableNumber: { type: Number, required: false },
+  role: { type: String, enum: ['customer', 'kitchen', 'admin'], default: 'customer' }, // Role field
   createdAt: { type: Date, default: Date.now }
 });
 
